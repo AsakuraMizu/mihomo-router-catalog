@@ -1,0 +1,30 @@
+name: Keep scheduled workflows active
+
+on:
+  schedule:
+    - cron: "41 7 1 * *"
+  workflow_dispatch:
+
+concurrency:
+  group: catalog-maintenance
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Record monthly activity
+        run: date -u +%Y-%m > .github/schedule-heartbeat
+      - name: Commit schedule heartbeat
+        uses: EndBug/add-and-commit@v10
+        with:
+          add: .github/schedule-heartbeat
+          default_author: github_actions
+          message: "chore: keep scheduled workflows active"

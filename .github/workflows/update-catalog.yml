@@ -1,0 +1,39 @@
+name: Update catalog
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: catalog-maintenance
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Check types
+        run: bun run typecheck
+      - name: Run tests
+        run: bun test
+      - name: Fetch and verify upstream releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bun run catalog:update
+      - name: Commit catalog update
+        uses: EndBug/add-and-commit@v10
+        with:
+          add: public/v1/catalog.json
+          default_author: github_actions
+          message: "catalog: update latest releases"

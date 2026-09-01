@@ -1,0 +1,19 @@
+{
+  "name": "mihomo-router-catalog",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.0",
+  "scripts": {
+    "catalog:check": "bun run scripts/update-catalog.ts check",
+    "catalog:update": "bun run scripts/update-catalog.ts update",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "tar-stream": "3.2.1"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.0",
+    "typescript": "7.0.2"
+  }
+}
