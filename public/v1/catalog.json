@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-10T11:28:44Z",
+  "updated_at": "2026-09-14T21:53:23Z",
   "components": {
     "mihomo": {
-      "version": "1.19.30",
-      "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.30/mihomo-linux-amd64-v1.19.30.gz",
-      "size": 18868732,
-      "sha256": "cf06ce2c7d1421bdbda14ee4a5b6046672dc35ebf8eecd8e77504ec3c0ed9a84"
+      "version": "1.19.31",
+      "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.31/mihomo-linux-amd64-v1.19.31.gz",
+      "size": 22789792,
+      "sha256": "d5e74bbddbdfff49a1aef7775bf5911da59f0d7196ed509a0ac914b3653dd5f1"
     },
     "metacubexd": {
       "version": "1.273.1",
