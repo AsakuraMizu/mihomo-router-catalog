@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T19:51:27Z",
+  "updated_at": "2026-11-07T13:14:26Z",
   "components": {
     "mihomo": {
       "version": "1.19.33",
@@ -9,10 +9,10 @@
       "sha256": "132f6f3edf9a65e62f04853aed3358472e0b2b7666daa8419edfa2ddf5bb6323"
     },
     "metacubexd": {
-      "version": "1.274.4",
-      "url": "https://github.com/MetaCubeX/metacubexd/releases/download/v1.274.4/compressed-dist.tgz",
-      "size": 2552532,
-      "sha256": "144f60aaa3b23090d331992761f2ead543b2339ac0d5a3e88a933875f6d8ef2f"
+      "version": "1.274.5",
+      "url": "https://github.com/MetaCubeX/metacubexd/releases/download/v1.274.5/compressed-dist.tgz",
+      "size": 2552759,
+      "sha256": "af2f59dfcf7ba0da18e165022da014b6d81f34a2de3f102ec031d93503a4fe55"
     }
   }
 }
